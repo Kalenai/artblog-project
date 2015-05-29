@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 from selenium import webdriver
 from pyvirtualdisplay import Display
-import unittest
+from django.core.urlresolvers import reverse
+from django.contrib.staticfiles.testing import LiveServerTestCase
 
 
-class NewVisitorTest(unittest.TestCase):
+class NewVisitorTest(LiveServerTestCase):
 
     def setUp(self):
         # start virtual display
@@ -19,9 +20,9 @@ class NewVisitorTest(unittest.TestCase):
         self.browser.quit()
         self.display.stop()
 
-    def test_it_worked(self):
-        self.browser.get('http://localhost:8000')
-        self.assertIn('Welcome to Django', self.browser.title)
+    def get_full_url(self, namespace):
+        return self.live_server_url + reverse(namespace)
 
-if __name__ == '__main__':
-    unittest.main(warnings='ignore')
+    def test_home_title(self):
+        self.browser.get(self.get_full_url("home"))
+        self.assertIn("Artblog", self.browser.title)
