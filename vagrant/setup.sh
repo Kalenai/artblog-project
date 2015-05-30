@@ -11,6 +11,11 @@ apt-get install -y firefox nginx python3.4 python3-pip xvfb
 pip3 install virtualenv virtualenvwrapper
 
 
+# configure nginx
+cp /vagrant/vagrant/nginx.conf /etc/nginx/sites-available/default
+service nginx restart
+
+
 # setup virtualenvwrapper
 
 echo "export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3" >> /home/vagrant/.profile

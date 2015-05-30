@@ -2,10 +2,10 @@
 from selenium import webdriver
 from pyvirtualdisplay import Display
 from django.core.urlresolvers import reverse
-from django.contrib.staticfiles.testing import LiveServerTestCase
+from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 
 
-class NewVisitorTest(LiveServerTestCase):
+class NewVisitorTest(StaticLiveServerTestCase):
 
     def setUp(self):
         # start virtual display
