@@ -72,3 +72,5 @@ env-galleryblog/
 db.sqlite3
 static/
 *.sublime-workspace
+.coverage
+htmlcov

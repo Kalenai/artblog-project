@@ -1,2 +1,2 @@
 django>=1.8.2
-pyvirtualdisplay
+pytz>=2015.4

@@ -28,6 +28,7 @@ source /home/vagrant/.profile
 
 # setup virtualenvs
 
+# TODO - get rid of the dev-env virtualenv
 mkvirtualenv -r /vagrant/requirements/dev.txt dev-env
 echo "export DJANGO_SETTINGS_MODULE='artblog.settings.development'" >> $VIRTUAL_ENV/bin/postactivate
 echo "export SECRET_KEY='Development Key - Change for Production'" >> $VIRTUAL_ENV/bin/postactivate
