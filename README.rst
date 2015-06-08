@@ -1,4 +1,4 @@
-#Artblog
+Artblog
 =======
 
 This is a blog project for those who need a art-centric platform.
@@ -12,7 +12,7 @@ If you'd like to use the boilerplate to work on development yourself,
 check out the Requirements and Quick Start!
 
 
-#Requirements
+Requirements
 ============
 
 For development, this project is using the following:
@@ -43,7 +43,7 @@ Installing pip3, virtualenv, and virtualenvwrapper can be a pain depending on yo
 I would recommend Google-ing for instructions for your preferred operating system.
 
 
-#Quick Start Guide
+Quick Start Guide
 =================
 
 Download the Artblog Project from GitHub
