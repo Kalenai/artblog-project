@@ -32,21 +32,21 @@ echo "export PROJECT_HOME=/home/vagrant/Devel" >> /home/vagrant/.profile
 echo "source /usr/local/bin/virtualenvwrapper.sh" >> /home/vagrant/.profile
 source /home/vagrant/.profile
 
-
+# TODO - fix all the venvs so they aren't created as root
 #setup virtualenvs for testing and staging
 mkvirtualenv -r /vagrant/requirements/testing.txt testing-env
 echo "export DJANGO_SETTINGS_MODULE='artblog.settings.testing'" >> $VIRTUAL_ENV/bin/postactivate
 echo "export SECRET_KEY='Development Key - Change for production'" >> $VIRTUAL_ENV/bin/postactivate
 echo "unset SECRET_KEY" >> $VIRTUAL_ENV/bin/predeactivate
 echo "unset DJANGO_SETTINGS_MODULE" >> $VIRTUAL_ENV/bin/predeactivate
-echo "source /home/vagrant/.profile" >> $VIRTUAL_ENV/bin/predeactivate
+echo "source /home/vagrant/.profile" >> $VIRTUAL_ENV/bin/postdeactivate
 
 mkvirtualenv -r /vagrant/requirements/staging.txt staging-env
 echo "export DJANGO_SETTINGS_MODULE='artblog.settings.staging'" >> $VIRTUAL_ENV/bin/postactivate
 echo "export SECRET_KEY='Development Key - Change for production'" >> $VIRTUAL_ENV/bin/postactivate
 echo "unset SECRET_KEY" >> $VIRTUAL_ENV/bin/predeactivate
 echo "unset DJANGO_SETTINGS_MODULE" >> $VIRTUAL_ENV/bin/predeactivate
-echo "source /home/vagrant/.profile" >> $VIRTUAL_ENV/bin/predeactivate
+echo "source /home/vagrant/.profile" >> $VIRTUAL_ENV/bin/postdeactivate
 
 #run this if you want a separate virtualenv for development
 #mkvirtualenv -r /vagrant/requirements/dev.txt dev-env
@@ -54,7 +54,7 @@ echo "source /home/vagrant/.profile" >> $VIRTUAL_ENV/bin/predeactivate
 #echo "export SECRET_KEY='Development Key - Change for production'" >> $VIRTUAL_ENV/bin/postactivate
 #echo "unset SECRET_KEY" >> $VIRTUAL_ENV/bin/predeactivate
 #echo "unset DJANGO_SETTINGS_MODULE" >> $VIRTUAL_ENV/bin/predeactivate
-#echo "source /home/vagrant/.profile" >> $VIRTUAL_ENV/bin/predeactivate
+#echo "source /home/vagrant/.profile" >> $VIRTUAL_ENV/bin/postdeactivate
 
 #run this if you need a virtualenv for production on your vagrant VM
 #mkvirtualenv -r /vagrant/requirements/production.txt production-env
@@ -62,4 +62,4 @@ echo "source /home/vagrant/.profile" >> $VIRTUAL_ENV/bin/predeactivate
 #echo "export SECRET_KEY='Development Key - Change for production'" >> $VIRTUAL_ENV/bin/postactivate
 #echo "unset SECRET_KEY" >> $VIRTUAL_ENV/bin/predeactivate
 #echo "unset DJANGO_SETTINGS_MODULE" >> $VIRTUAL_ENV/bin/predeactivate
-#echo "source /home/vagrant/.profile" >> $VIRTUAL_ENV/bin/predeactivate
+#echo "source /home/vagrant/.profile" >> $VIRTUAL_ENV/bin/postdeactivate

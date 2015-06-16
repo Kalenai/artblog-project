@@ -74,3 +74,4 @@ static/
 *.sublime-workspace
 .coverage
 htmlcov
+artblog/fixtures
