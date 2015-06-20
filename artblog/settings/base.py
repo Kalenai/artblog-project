@@ -38,6 +38,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+    # django apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -46,11 +47,17 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
-    # allauth
+    # artblog apps
+    'artblog.apps.blog',
+
+    # allauth apps
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+
+    # django markdown
+    'django_markdown',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -143,6 +150,7 @@ STATICFILES_DIRS = (
 # TODO - redirect to the page where 'login' was clicked instead
 LOGIN_REDIRECT_URL = '/'
 
+# This should be set to the appropriate corresponding ID listed in the site URL (found in the admin section)
 SITE_ID = 5
 
 ACCOUNT_USERNAME_REQUIRED = False
