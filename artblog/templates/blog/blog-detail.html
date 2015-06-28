@@ -1,0 +1,13 @@
+{% extends 'blog/blog-base.html' %}
+{% load django_markdown %}
+
+{% block blog_posts %}
+  <div class="post">
+    <h2>{{ object.title }}</h2>
+    <p class="meta">
+      {{ object.created }}
+      Tags: {{  object.tags.all|join:', '  }}
+    </p>
+    {{ object.body|markdown }}
+  </div>
+{% endblock %}

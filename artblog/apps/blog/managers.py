@@ -2,4 +2,5 @@
 from django.db import models
 
 class PostManager(models.Manager):
-    pass
+    def published(self):
+        return self.filter(published=True)

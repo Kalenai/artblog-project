@@ -8,3 +8,5 @@ class PostAdmin(MarkdownModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
     # TODO - add tags as a search field once they're implemented
     search_fields = ["title"]
+
+admin.site.register(models.Tag)
