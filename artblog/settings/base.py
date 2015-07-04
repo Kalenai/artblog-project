@@ -49,6 +49,7 @@ INSTALLED_APPS = (
 
     # artblog apps
     'artblog.apps.blog',
+    'artblog.apps.gallery',
 
     # allauth apps
     'allauth',
@@ -165,3 +166,9 @@ SOCIALACCOUNT_PROVIDERS = \
     { 'google':
         { 'SCOPE': ['profile', 'email'],
           'AUTH_PARAMS': { 'access_type': 'online' } }}
+
+MEDIA_ROOT = (
+    os.path.join(BASE_DIR, "media")
+)
+
+MEDIA_URL = '/media/'

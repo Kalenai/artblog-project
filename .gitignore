@@ -75,3 +75,4 @@ static/
 .coverage
 htmlcov
 artblog/fixtures
+artblog/media/*

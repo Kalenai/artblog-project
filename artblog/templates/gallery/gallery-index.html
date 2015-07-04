@@ -1,0 +1,11 @@
+{% extends 'gallery/gallery-base.html' %}
+
+{% block gallery_content %}
+{% for object in object_list %}
+  <div class="gallery-image">
+      <a href="#" class="thumbnail">
+        <img src="{{ MEDIA_URL }}{{ object.image }}" class="img-responsive" alt="{{ object.title }}">
+      </a>
+  </div>
+{% endfor %}
+{% endblock %}
