@@ -70,7 +70,6 @@ crashlytics-build.properties
 env-galleryblog/
 .vagrant/
 db.sqlite3
-static/
 *.sublime-workspace
 .coverage
 htmlcov

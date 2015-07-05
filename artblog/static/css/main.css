@@ -1,0 +1,17 @@
+.gallery-main {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-image {
+  /*TODO - does not correctly resize on Firefox*/
+  flex-basis: 300px;
+  padding: 20px;
+}

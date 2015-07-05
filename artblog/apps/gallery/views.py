@@ -1,4 +1,4 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView
 from . import models
 
 class GalleryIndex(ListView):
@@ -6,5 +6,3 @@ class GalleryIndex(ListView):
     paginate_by = 6
     template_name = 'gallery/gallery-index.html'
 
-class GalleryDetail(DetailView):
-    pass

@@ -1,11 +1,20 @@
 {% extends 'gallery/gallery-base.html' %}
+{% load staticfiles %}
+
+{% block head_css %}
+<link rel="stylesheet" href="{% static 'css/lightbox.css' %}">
+{% endblock %}
 
 {% block gallery_content %}
 {% for object in object_list %}
   <div class="gallery-image">
-      <a href="#" class="thumbnail">
-        <img src="{{ MEDIA_URL }}{{ object.image }}" class="img-responsive" alt="{{ object.title }}">
-      </a>
+    <a href="{{ MEDIA_URL }}{{ object.image }}" data-lightbox="gallery-set" data-title="{{ object.title }}" class="thumbnail">
+      <img src="{{ MEDIA_URL }}{{ object.image }}" class="img-responsive" alt="{{ object.title }} - {{ object.caption }}">
+    </a>
   </div>
 {% endfor %}
+{% endblock %}
+
+{% block footer_javascript %}
+  <script src="{% static 'js/vendor/lightbox.min.js' %}"></script>
 {% endblock %}
