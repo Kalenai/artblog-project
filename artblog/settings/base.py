@@ -57,6 +57,9 @@ INSTALLED_APPS = (
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+
+    # ckeditor app
+    'ckeditor',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -171,3 +174,9 @@ MEDIA_ROOT = (
 )
 
 MEDIA_URL = '/media/'
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+CKEDITOR_IMAGE_BACKEND = 'pillow'
+
+CKEDITOR_JQUERY_URL = '/static/js/vendor/jquery-1.11.2.min.js'

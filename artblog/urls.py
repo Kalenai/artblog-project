@@ -8,6 +8,7 @@ from .views import home, home_files
 urlpatterns = [
     url(r'^$', home, name='home'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^ckeditor/', include('ckeditor.urls')),
     url(r'^blog/', include('artblog.apps.blog.urls')),
     url(r'^gallery/', include('artblog.apps.gallery.urls')),
     url(r'^(?P<filename>(robots.txt)|(humans.txt))$',

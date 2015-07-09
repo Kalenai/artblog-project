@@ -2,6 +2,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from . import managers
+from ckeditor.fields import RichTextField
 
 class Tag(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
@@ -15,7 +16,7 @@ class Post(models.Model):
     tags = models.ManyToManyField(Tag)
 
     title = models.CharField(max_length=200)
-    body = models.TextField()
+    body = RichTextField()
     slug = models.SlugField(max_length=200, unique=True)
     published = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)

@@ -7,6 +7,6 @@
       {{ object.created }}
       Tags: {{  object.tags.all|join:', '  }}
     </p>
-    {{ object.body }}
+    {{ object.body|safe }}
   </div>
 {% endblock %}
