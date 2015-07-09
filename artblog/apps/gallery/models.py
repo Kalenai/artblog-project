@@ -2,6 +2,8 @@
 from django.db import models
 from . import managers
 
+# TODO - add some kind of tag system and a way to sort the gallery by tag
+
 class ImageEntry(models.Model):
     title = models.CharField(max_length=200)
     image = models.ImageField()

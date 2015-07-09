@@ -1,0 +1,10 @@
+{% extends 'flatpages/default.html' %}
+{% block flatpage_content %}
+  <div class="col-md-4 col-xs-12 about-image">
+    <img src="{{ MEDIA_URL }}/about_image.jpg/" class="img-responsive">
+  </div>
+  <div class="col-md-8 col-xs-12 about-content">
+    <h3>{{ flatpage.title }}</h3>
+    {{ flatpage.content }}
+  </div>
+{% endblock %}

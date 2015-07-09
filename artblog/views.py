@@ -11,7 +11,7 @@ def home_files(request, filename):
     return render(request, filename, {}, content_type="text/plain")
 
 def about(request):
-    return render(request, "artblog/about.html")
+    return render(request, "artblog/templates/flatpages/about.html")
 
 def contact(request):
-    return render(request, "artblog/contact.html")
+    return render(request, "artblog/templates/flatpages/contact.html")

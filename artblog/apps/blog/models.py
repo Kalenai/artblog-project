@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 from django.contrib.auth.models import User
-from django_markdown.models import MarkdownField
 from . import managers
 
 class Tag(models.Model):
@@ -11,13 +10,12 @@ class Tag(models.Model):
         return self.slug
 
 
-# TODO - fix this so that images are responsive.  likely means switching from markdown to an HTML editor like CKEditor
 class Post(models.Model):
     author = models.ForeignKey(User)
     tags = models.ManyToManyField(Tag)
 
     title = models.CharField(max_length=200)
-    body = MarkdownField()
+    body = models.TextField()
     slug = models.SlugField(max_length=200, unique=True)
     published = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)

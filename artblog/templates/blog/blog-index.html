@@ -1,5 +1,4 @@
 {% extends 'blog/blog-base.html' %}
-{% load django_markdown %}
 
 {% block blog_posts %}
 {% for object in object_list %}
@@ -9,7 +8,7 @@
       {{ object.created }}
       Tags: {{  object.tags.all|join:', '  }}
     </p>
-    {{ object.body|markdown }}
+    {{ object.body }}
   </div>
 {% endfor %}
 {% endblock %}
